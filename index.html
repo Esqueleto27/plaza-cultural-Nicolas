@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plaza Cultural</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
@@ -15,9 +22,9 @@
   <body>
     <!-- NAVBAR -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Plaza Cultural</a>
+        <a class="navbar-brand" href="#">Plaza Cultural</a>
 
         <button
           class="navbar-toggler"
@@ -33,11 +40,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#inicio">Inicio</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="#espacios">Espacios</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="#contacto">Contacto</a>
             </li>
@@ -50,9 +55,10 @@
 
     <header id="inicio">
       <div class="container">
-        <h1 class="display-4 fw-bold">Plaza Cultural</h1>
-
-        <p class="lead mt-3">
+        <p class="header-label">Arquitectura · Cultura · Comunidad</p>
+        <h1>Plaza Cultural</h1>
+        <div class="header-divider"></div>
+        <p class="lead">
           Este proyecto arquitectónico propone un espacio público que integra
           arte, paisaje y movimiento. Un lugar pensado para la comunidad, donde
           la arquitectura conecta a las personas con la cultura, la naturaleza y
@@ -65,37 +71,50 @@
 
     <section class="main-section">
       <div class="container">
-        <img src="img/principal.jpg" class="img-fluid rounded shadow-lg mb-4" />
-
-        <p class="text-center fs-5">
-          El proyecto se concibe como un espacio de encuentro donde la
-          arquitectura y el paisaje se integran para generar nuevas experiencias
-          espaciales. Las plataformas elevadas permiten recorrer el lugar desde
-          distintos niveles, creando zonas de descanso, arte y convivencia.
-        </p>
+        <img
+          src="img/principal.jpg"
+          class="img-fluid main-img mb-5"
+          alt="Vista principal de la Plaza Cultural"
+        />
+        <div class="row justify-content-center">
+          <div class="col-lg-7">
+            <p class="text-center text-muted-custom">
+              El proyecto se concibe como un espacio de encuentro donde la
+              arquitectura y el paisaje se integran para generar nuevas
+              experiencias espaciales. Las plataformas elevadas permiten recorrer
+              el lugar desde distintos niveles, creando zonas de descanso, arte
+              y convivencia.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ESPACIOS -->
 
-    <section id="espacios" class="pb-5">
+    <section id="espacios" class="espacios-section">
       <div class="container">
-        <h2 class="text-center mb-5">Espacios del proyecto</h2>
+        <div class="section-header text-center mb-5">
+          <p class="section-label">Nuestros Espacios</p>
+          <h2>Espacios del proyecto</h2>
+          <div class="section-divider mx-auto"></div>
+        </div>
 
         <div class="row g-4">
           <!-- CARD 1 -->
 
           <div class="col-md-4">
-            <div class="card shadow-lg">
-              <img src="img/patio.jpg" class="card-img-top" />
-
-              <div class="card-body">
-                <h5 class="card-title">Patio Cultural</h5>
-
+            <div class="card h-100">
+              <div class="card-img-wrapper">
+                <img src="img/patio.jpg" class="card-img-top" alt="Patio Cultural" />
+              </div>
+              <div class="card-body p-4">
+                <span class="card-tag">Espacio abierto</span>
+                <h5 class="card-title mt-2">Patio Cultural</h5>
                 <p class="card-text">
                   Un espacio abierto pensado para eventos, exposiciones y
-                  encuentros comunitarios donde el arte y la cultura se viven al
-                  aire libre.
+                  encuentros comunitarios donde el arte y la cultura se viven
+                  al aire libre.
                 </p>
               </div>
             </div>
@@ -104,12 +123,13 @@
           <!-- CARD 2 -->
 
           <div class="col-md-4">
-            <div class="card shadow-lg">
-              <img src="img/centro.jpg" class="card-img-top" />
-
-              <div class="card-body">
-                <h5 class="card-title">Centro de Actividades</h5>
-
+            <div class="card h-100">
+              <div class="card-img-wrapper">
+                <img src="img/centro.jpg" class="card-img-top" alt="Centro de Actividades" />
+              </div>
+              <div class="card-body p-4">
+                <span class="card-tag">Actividades</span>
+                <h5 class="card-title mt-2">Centro de Actividades</h5>
                 <p class="card-text">
                   Área diseñada para talleres, presentaciones artísticas y
                   actividades educativas que fomentan la participación cultural.
@@ -121,12 +141,13 @@
           <!-- CARD 3 -->
 
           <div class="col-md-4">
-            <div class="card shadow-lg">
-              <img src="img/vistas.jpg" class="card-img-top" />
-
-              <div class="card-body">
-                <h5 class="card-title">Mirador del Paisaje</h5>
-
+            <div class="card h-100">
+              <div class="card-img-wrapper">
+                <img src="img/vistas.jpg" class="card-img-top" alt="Mirador del Paisaje" />
+              </div>
+              <div class="card-body p-4">
+                <span class="card-tag">Paisaje</span>
+                <h5 class="card-title mt-2">Mirador del Paisaje</h5>
                 <p class="card-text">
                   Plataformas elevadas que permiten contemplar el entorno
                   natural y disfrutar de vistas únicas del paisaje.
@@ -142,42 +163,36 @@
 
     <section id="contacto" class="contact">
       <div class="container">
-        <h2 class="text-center mb-4">Haz realidad tus sueños</h2>
-
-        <p class="text-center mb-5">
-          Si deseas desarrollar un proyecto arquitectónico o cultural,
-          contáctanos y juntos podremos transformar tus ideas en espacios
-          reales.
-        </p>
+        <div class="section-header text-center mb-5">
+          <p class="section-label-light">Conectemos</p>
+          <h2>Haz realidad tus sueños</h2>
+          <div class="section-divider mx-auto section-divider--light"></div>
+          <p class="contact-subtitle mt-4">
+            Si deseas desarrollar un proyecto arquitectónico o cultural,
+            contáctanos y juntos podremos transformar tus ideas en espacios
+            reales.
+          </p>
+        </div>
 
         <div class="row justify-content-center">
           <div class="col-md-6">
             <form>
               <div class="mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Tu nombre"
-                />
+                <input type="text" class="form-control" placeholder="Tu nombre" />
               </div>
-
               <div class="mb-3">
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Tu correo"
-                />
+                <input type="email" class="form-control" placeholder="Tu correo" />
               </div>
-
-              <div class="mb-3">
+              <div class="mb-4">
                 <textarea
                   class="form-control"
                   rows="4"
                   placeholder="Cuéntanos tu idea o proyecto"
                 ></textarea>
               </div>
-
-              <button class="btn btn-light w-100">Enviar mensaje</button>
+              <button class="btn btn-outline-light w-100 py-3">
+                Enviar mensaje
+              </button>
             </form>
           </div>
         </div>
@@ -187,10 +202,15 @@
     <!-- FOOTER -->
 
     <footer>
-      <p class="mb-0">
-        © 2026 Plaza Cultural - Arquitectura-UTE - Nicolas Herrera.
-      </p>
-      <a href="mailto:nicobelick55@gmail.com">Contacto</a>
+      <div class="container">
+        <div class="footer-inner">
+          <p class="footer-brand">Plaza Cultural</p>
+          <p class="footer-copy">© 2026 Arquitectura · UTE · Nicolas Herrera</p>
+          <a href="mailto:nicobelick55@gmail.com" class="footer-link">
+            nicobelick55@gmail.com
+          </a>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
