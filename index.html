@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
 
@@ -20,8 +20,24 @@
   </head>
 
   <body>
-    <!-- NAVBAR -->
 
+    <!-- PRELOADER -->
+    <div id="preloader">
+      <div class="preloader__inner">
+        <p class="preloader__label">Arquitectura · Cultura</p>
+        <h2 class="preloader__title">Plaza Cultural</h2>
+        <div class="preloader__line"></div>
+      </div>
+    </div>
+
+    <!-- CURSOR -->
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <!-- SCROLL PROGRESS -->
+    <div id="scroll-progress"></div>
+
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container">
         <a class="navbar-brand" href="#">Plaza Cultural</a>
@@ -52,9 +68,9 @@
     </nav>
 
     <!-- HEADER -->
-
     <header id="inicio">
-      <div class="container">
+      <canvas id="particles"></canvas>
+      <div class="container header-content">
         <p class="header-label">Arquitectura · Cultura · Comunidad</p>
         <h1>Plaza Cultural</h1>
         <div class="header-divider"></div>
@@ -64,21 +80,34 @@
           la arquitectura conecta a las personas con la cultura, la naturaleza y
           la creatividad.
         </p>
+        <a href="#espacios" class="hero-cta">
+          <span>Explorar espacios</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </a>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-indicator__line"></div>
       </div>
     </header>
 
     <!-- SECCION PRINCIPAL -->
-
     <section class="main-section">
       <div class="container">
-        <img
-          src="img/principal.jpg"
-          class="img-fluid main-img mb-5"
-          alt="Vista principal de la Plaza Cultural"
-        />
-        <div class="row justify-content-center">
+        <div class="main-img-wrapper" data-reveal>
+          <img
+            src="img/principal.jpg"
+            class="img-fluid main-img"
+            alt="Vista principal de la Plaza Cultural"
+          />
+          <div class="main-img-overlay">
+            <span>Vista Principal del Proyecto</span>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-5">
           <div class="col-lg-7">
-            <p class="text-center text-muted-custom">
+            <p class="text-center text-muted-custom" data-reveal>
               El proyecto se concibe como un espacio de encuentro donde la
               arquitectura y el paisaje se integran para generar nuevas
               experiencias espaciales. Las plataformas elevadas permiten recorrer
@@ -90,23 +119,62 @@
       </div>
     </section>
 
-    <!-- ESPACIOS -->
+    <!-- ESTADÍSTICAS -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row g-0">
+          <div class="col-md-4 stat-item" data-reveal>
+            <div class="stat-inner">
+              <div class="stat-number-wrap">
+                <span class="stat-number" data-count="820">0</span>
+                <span class="stat-suffix">m²</span>
+              </div>
+              <div class="stat-divider"></div>
+              <p class="stat-label">Área cultural abierta</p>
+            </div>
+          </div>
+          <div class="col-md-4 stat-item" data-reveal data-delay="150">
+            <div class="stat-inner">
+              <div class="stat-number-wrap">
+                <span class="stat-number" data-count="3">0</span>
+                <span class="stat-suffix"> zonas</span>
+              </div>
+              <div class="stat-divider"></div>
+              <p class="stat-label">De experiencia cultural</p>
+            </div>
+          </div>
+          <div class="col-md-4 stat-item" data-reveal data-delay="300">
+            <div class="stat-inner">
+              <div class="stat-number-wrap">
+                <span class="stat-number" data-count="12">0</span>
+                <span class="stat-suffix"> eventos</span>
+              </div>
+              <div class="stat-divider"></div>
+              <p class="stat-label">Proyectados por año</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ESPACIOS -->
     <section id="espacios" class="espacios-section">
       <div class="container">
         <div class="section-header text-center mb-5">
-          <p class="section-label">Nuestros Espacios</p>
-          <h2>Espacios del proyecto</h2>
-          <div class="section-divider mx-auto"></div>
+          <p class="section-label" data-reveal>Nuestros Espacios</p>
+          <h2 data-reveal data-delay="100">Espacios del proyecto</h2>
+          <div class="section-divider mx-auto" data-reveal data-delay="200"></div>
         </div>
 
         <div class="row g-4">
           <!-- CARD 1 -->
-
-          <div class="col-md-4">
+          <div class="col-md-4" data-reveal data-delay="0">
             <div class="card h-100">
               <div class="card-img-wrapper">
                 <img src="img/patio.jpg" class="card-img-top" alt="Patio Cultural" />
+                <div class="card-img-overlay-custom">
+                  <span class="card-overlay-tag">Espacio abierto</span>
+                </div>
               </div>
               <div class="card-body p-4">
                 <span class="card-tag">Espacio abierto</span>
@@ -116,16 +184,19 @@
                   encuentros comunitarios donde el arte y la cultura se viven
                   al aire libre.
                 </p>
+                <a href="#" class="card-link">Ver más <span>→</span></a>
               </div>
             </div>
           </div>
 
           <!-- CARD 2 -->
-
-          <div class="col-md-4">
+          <div class="col-md-4" data-reveal data-delay="150">
             <div class="card h-100">
               <div class="card-img-wrapper">
                 <img src="img/centro.jpg" class="card-img-top" alt="Centro de Actividades" />
+                <div class="card-img-overlay-custom">
+                  <span class="card-overlay-tag">Actividades</span>
+                </div>
               </div>
               <div class="card-body p-4">
                 <span class="card-tag">Actividades</span>
@@ -134,16 +205,19 @@
                   Área diseñada para talleres, presentaciones artísticas y
                   actividades educativas que fomentan la participación cultural.
                 </p>
+                <a href="#" class="card-link">Ver más <span>→</span></a>
               </div>
             </div>
           </div>
 
           <!-- CARD 3 -->
-
-          <div class="col-md-4">
+          <div class="col-md-4" data-reveal data-delay="300">
             <div class="card h-100">
               <div class="card-img-wrapper">
                 <img src="img/vistas.jpg" class="card-img-top" alt="Mirador del Paisaje" />
+                <div class="card-img-overlay-custom">
+                  <span class="card-overlay-tag">Paisaje</span>
+                </div>
               </div>
               <div class="card-body p-4">
                 <span class="card-tag">Paisaje</span>
@@ -152,6 +226,7 @@
                   Plataformas elevadas que permiten contemplar el entorno
                   natural y disfrutar de vistas únicas del paisaje.
                 </p>
+                <a href="#" class="card-link">Ver más <span>→</span></a>
               </div>
             </div>
           </div>
@@ -160,14 +235,13 @@
     </section>
 
     <!-- CONTACTO -->
-
     <section id="contacto" class="contact">
       <div class="container">
         <div class="section-header text-center mb-5">
-          <p class="section-label-light">Conectemos</p>
-          <h2>Haz realidad tus sueños</h2>
-          <div class="section-divider mx-auto section-divider--light"></div>
-          <p class="contact-subtitle mt-4">
+          <p class="section-label-light" data-reveal>Conectemos</p>
+          <h2 data-reveal data-delay="100">Haz realidad tus sueños</h2>
+          <div class="section-divider mx-auto section-divider--light" data-reveal data-delay="200"></div>
+          <p class="contact-subtitle mt-4" data-reveal data-delay="300">
             Si deseas desarrollar un proyecto arquitectónico o cultural,
             contáctanos y juntos podremos transformar tus ideas en espacios
             reales.
@@ -175,23 +249,23 @@
         </div>
 
         <div class="row justify-content-center">
-          <div class="col-md-6">
-            <form>
-              <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Tu nombre" />
+          <div class="col-md-6" data-reveal data-delay="150">
+            <form id="contact-form">
+              <div class="form-field mb-4">
+                <input type="text" class="form-control" id="nombre" placeholder=" " />
+                <label for="nombre">Tu nombre</label>
               </div>
-              <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Tu correo" />
+              <div class="form-field mb-4">
+                <input type="email" class="form-control" id="correo" placeholder=" " />
+                <label for="correo">Tu correo</label>
               </div>
-              <div class="mb-4">
-                <textarea
-                  class="form-control"
-                  rows="4"
-                  placeholder="Cuéntanos tu idea o proyecto"
-                ></textarea>
+              <div class="form-field mb-5">
+                <textarea class="form-control" id="mensaje" rows="4" placeholder=" "></textarea>
+                <label for="mensaje">Cuéntanos tu idea o proyecto</label>
               </div>
-              <button class="btn btn-outline-light w-100 py-3">
-                Enviar mensaje
+              <button type="submit" class="btn-submit">
+                <span class="btn-submit__text">Enviar mensaje</span>
+                <span class="btn-submit__fill"></span>
               </button>
             </form>
           </div>
@@ -200,7 +274,6 @@
     </section>
 
     <!-- FOOTER -->
-
     <footer>
       <div class="container">
         <div class="footer-inner">
@@ -214,5 +287,6 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
